@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eyeem/eslint-plugin-eyeem-refactor"
+    "url": "git+https://github.com/eyeem/eslint-plugin-eyeem-refactor.git"
   },
   "author": "Eric Schaefer <eric@eyeem.com>",
   "main": "lib/index.js",
