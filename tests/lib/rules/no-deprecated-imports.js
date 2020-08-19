@@ -17,14 +17,14 @@ const rule = require('../../../lib/rules/no-deprecated-imports'),
 //------------------------------------------------------------------------------
 
 const ruleTester = new RuleTester({
-  parser: path.join(process.cwd(), 'node_modules/babel-eslint/lib')
+  parser: path.join(process.cwd(), 'node_modules/babel-eslint/lib'),
 });
 
 ruleTester.run('no-deprecated-imports', rule, {
   valid: [
     "import { Something, Another, Header } from 'eyeem-components'",
     "import lib from 'eyeem-components'",
-    "import { Text, Button } from 'another-library'"
+    "import { Text, Button } from 'another-library'",
   ],
 
   invalid: [
@@ -34,9 +34,19 @@ ruleTester.run('no-deprecated-imports', rule, {
         {
           message:
             'Text component is deprecated. Refactor to use Text from @eyeem-ui instead.',
-          type: 'Identifier'
-        }
-      ]
+          type: 'Identifier',
+        },
+      ],
+    },
+    {
+      code: "import { StyledText, Another, Header } from 'eyeem-components'",
+      errors: [
+        {
+          message:
+            'StyledText component is deprecated. Refactor to use Text from @eyeem-ui instead.',
+          type: 'Identifier',
+        },
+      ],
     },
     {
       code: "import { Checkbox, Another, Header } from 'eyeem-components'",
@@ -44,9 +54,9 @@ ruleTester.run('no-deprecated-imports', rule, {
         {
           message:
             'Checkbox component is deprecated. Refactor to use Checkbox from @eyeem-ui instead.',
-          type: 'Identifier'
-        }
-      ]
+          type: 'Identifier',
+        },
+      ],
     },
     {
       code: "import { Input, Another, Header } from 'eyeem-components'",
@@ -54,9 +64,9 @@ ruleTester.run('no-deprecated-imports', rule, {
         {
           message:
             'Input component is deprecated. Refactor to use Input from @eyeem-ui instead.',
-          type: 'Identifier'
-        }
-      ]
-    }
-  ]
+          type: 'Identifier',
+        },
+      ],
+    },
+  ],
 });
