@@ -68,5 +68,16 @@ ruleTester.run('no-deprecated-imports', rule, {
         },
       ],
     },
+    {
+      code: "import { styled } from 'styled-components'",
+      errors: [
+        {
+          message:
+            'styled from styled-components is deprecated. Refactor to use styled from @emotion instead.',
+          type: 'Identifier',
+        },
+      ],
+    },
+
   ],
 });
