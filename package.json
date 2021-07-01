@@ -25,10 +25,10 @@
     "eslint": ">=3.9.1"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.6.0",
-    "mocha": "^6.1.4",
-    "np": "^5.0.3"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.29.0",
+    "mocha": "^9.0.1",
+    "np": "^7.5.0"
   },
   "engines": {
     "node": ">=0.10.0"
