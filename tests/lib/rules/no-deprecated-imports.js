@@ -17,7 +17,7 @@ const rule = require('../../../lib/rules/no-deprecated-imports'),
 //------------------------------------------------------------------------------
 
 const ruleTester = new RuleTester({
-  parser: path.join(process.cwd(), 'node_modules/babel-eslint/lib'),
+  parser: path.join(process.cwd(), 'node_modules/@babel/eslint-parser'),
 });
 
 ruleTester.run('no-deprecated-imports', rule, {

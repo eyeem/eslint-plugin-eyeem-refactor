@@ -17,7 +17,7 @@ const rule = require('../../../lib/rules/no-classnames-module'),
 //------------------------------------------------------------------------------
 
 const ruleTester = new RuleTester({
-  parser: path.join(process.cwd(), 'node_modules/babel-eslint/lib')
+  parser: path.join(process.cwd(), 'node_modules/@babel/eslint-parser')
 });
 
 ruleTester.run('no-classnames-module', rule, {
